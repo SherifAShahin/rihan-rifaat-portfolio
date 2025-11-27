@@ -1,0 +1,207 @@
+@import "../../_globalColor";
+
+.main {
+  width: 90%;
+  padding: 20px 10px;
+  margin: 0px auto;
+  margin-top: 4rem;
+}
+
+.greet-main {
+  width: 90%;
+  padding: 20px 10px;
+  margin: 0px auto;
+  margin-top: 2rem;
+}
+
+.greeting-main {
+  display: flex;
+}
+
+/* ------------------- HERO IMAGE + OVERLAY ------------------- */
+
+.hero-container {
+  position: relative;
+  width: 100%;
+  max-width: 700px; /* smaller width */
+  height: 45rem; /* control the height */
+  margin: 0;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.hero-image {
+  width: 100%;
+  height: 50rem; /* control the height */
+  object-fit: cover;
+  display: block;
+  filter: brightness(65%); // darkens image for better text contrast
+}
+
+/* Text INSIDE the image at the bottom center */
+.hero-text {
+  position: absolute;
+  bottom: 5%; // distance from bottom of image
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  width: 90%;
+  padding: 0 20px;
+}
+
+/* Make sure hero text stays white even with global .greeting-text styles */
+.hero-text .greeting-text {
+  color: #ffffff !important;
+  font-size: 60px;
+  font-weight: 700;
+  margin: 0;
+  background: transparent !important;
+}
+
+.hero-text .greeting-text-p {
+  color: #f8f8f8 !important;
+  font-size: 24px;
+  margin-top: 15px;
+  background: transparent !important;
+}
+
+/* ------------------- REST OF ORIGINAL STYLES ------------------- */
+
+.subTitle {
+  color: $subTitle !important;
+}
+
+.greeting-main > * {
+  flex: 1;
+  margin-bottom: 30px;
+}
+
+.empty-div {
+  margin-bottom: 40px;
+}
+
+.button-greeting-div {
+  display: flex;
+  margin-top: 40px;
+}
+
+.download-link-button {
+  text-decoration: none;
+}
+
+/* GLOBAL greeting text (used in other places as well) */
+.greeting-text {
+  font-size: 70px;
+  line-height: 1.1;
+  color: $textColor !important;
+}
+
+.greeting-text-p {
+  font-size: 30px;
+  line-height: 40px;
+}
+
+.greeting-image-div > img {
+  max-width: 100%;
+  height: auto;
+}
+
+.wave-emoji {
+  animation-duration: 1.8s;
+  animation-iteration-count: infinite;
+  animation-name: wave;
+  display: inline-block;
+  transform-origin: 70% 70%;
+}
+
+@keyframes wave {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(-10deg);
+  }
+  20% {
+    transform: rotate(12deg);
+  }
+  30% {
+    transform: rotate(-10deg);
+  }
+  40% {
+    transform: rotate(9deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+/* Media Query */
+@media (max-width: 1380px) {
+  .greeting-text {
+    font-size: 50px;
+  }
+  .greeting-text-p {
+    font-size: 20px;
+  }
+
+  .hero-text .greeting-text {
+    font-size: 42px;
+  }
+  .hero-text .greeting-text-p {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-container {
+    position: relative;
+    width: 100%;
+    max-width: 700px; /* smaller width */
+    height: 35rem; /* control the height */
+    margin: 0;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+
+  .button-greeting-div {
+    justify-content: space-around;
+  }
+
+  .greeting-text {
+    font-size: 32px;
+  }
+  .greeting-text-p {
+    font-size: 16px;
+  }
+
+  .greeting-main {
+    display: block;
+  }
+
+  .greeting-image-div {
+    height: 256px;
+  }
+
+  .hero-text {
+    bottom: 3%;
+    width: 95%;
+    padding: 0 10px;
+  }
+
+  .hero-text .greeting-text {
+    font-size: 28px;
+  }
+
+  .hero-text .greeting-text-p {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 320px) {
+  .main {
+    width: auto;
+  }
+}
